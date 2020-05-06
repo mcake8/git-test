@@ -1,11 +1,17 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import axios from '@/Api';
 
+//modules
+import forks from './modules/forks';
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+let Store = new Vuex.Store({
   state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
+  modules: {
+    forks
+  }
 });
+
+Store.$axios = axios;
+export default Store;
